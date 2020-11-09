@@ -25,17 +25,7 @@ public class ProgramCustomer {
                     if(ProductManagement.getInstance().getProductList().isEmpty()){
                         System.err.println("Hết hàng");
                     } else {
-                        //Người dùng nhập thông tin
-                        Customer customer = new Customer();
-                        CustomerManagement.getInstance().inputCustomerInfo(customer);
-                        CustomerManagement.getInstance().addCustomer(customer);
-
-                        //Nhập thông tin và số lượng sản phẩm muốn mua
-                        System.out.println("Nhập ID sản phẩm muốn mua");
-                        String idProduct = input.nextLine();
-                        System.out.println("Nhập số lượng muốn mua");
-                        int purchaseQuantity = Integer.parseInt(input.nextLine());
-                        ProductManagement.getInstance().sellProduct(customer, idProduct, purchaseQuantity);
+                        CustomerAction.getInstance().buy();
                     }
                     break;
                 case 2:

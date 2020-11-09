@@ -25,15 +25,15 @@ public class Store {
         return employeeSalary;
     }
 
-    public double getRevenue(){
-        double revenue = 0;
+    public int getRevenue(){
+        int revenue = 0;
         if(ProductManagement.getInstance().getSoldList() == null){
             System.err.println("Chưa có doanh thu");
         } else {
             for (Product soldProduct: ProductManagement.getInstance().getSoldList()) {
-                revenue += soldProduct.getQuantities()*soldProduct.getPrice();
+                revenue += (soldProduct.getQuantities()*soldProduct.getPrice());
             }
         }
-        return revenue - getEmployeeSalary();
+        return (int) (revenue - getEmployeeSalary());
     }
 }

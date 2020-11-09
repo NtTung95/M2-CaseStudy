@@ -98,7 +98,7 @@ public class ProductManagement {
             if(prod.isStock()){
                 System.out.println(prod.getName() + " còn " + prod.getQuantities());
             } else {
-                System.out.println(prod.getName() + " hết hàng");
+                System.err.println(prod.getName() + " hết hàng");
             }
         }
     }
@@ -134,6 +134,9 @@ public class ProductManagement {
     public void sellProduct(Customer customer, String idProduct, int purchaseQuantity) throws CloneNotSupportedException {
             Product temp;
             for (Product boughtProduct : ProductManagement.getInstance().getProductList()) {
+                if(boughtProduct.getQuantities()<0){
+                    System.out.println("Sản phẩm đang hết hàng");
+                }
                 if(idProduct.equals(boughtProduct.getId())){
                     if(soldList == null){
                         soldList = new ArrayList<>();
@@ -150,8 +153,6 @@ public class ProductManagement {
             writeFile(productList, productFile);
             writeFile(soldList, soldProductFile);
     }
-
-
 
 
 

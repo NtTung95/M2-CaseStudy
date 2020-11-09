@@ -33,15 +33,11 @@ public class ProgramStore {
                         break;
                         case 4:
                             System.out.println("---Sản phẩm đã bán---");
-                        ProductManagement.getInstance().displaySoldProduct();
-                        System.out.println("---Lương nhân viên phải trả---");
-                        System.out.println(Store.getInstanceStore().getEmployeeSalary());
-                        System.out.println("---Doanh thu thực lĩnh cửa hàng---");
-                        if(Store.getInstanceStore().getRevenue() < 0){
-                            System.err.println("Lỗ");
-                        } else {
-                            System.out.println(Store.getInstanceStore().getRevenue());
-                        }
+                            ProductManagement.getInstance().displaySoldProduct();
+                            System.out.println("---Lương nhân viên phải trả---");
+                            System.out.println(Store.getInstanceStore().getEmployeeSalary());
+                            System.out.println("---Doanh thu thực lĩnh cửa hàng---");
+                            System.out.println(Store.getInstanceStore().getRevenue() + "VNĐ");
                         break;
                     case 0:
                         Main.programMain();

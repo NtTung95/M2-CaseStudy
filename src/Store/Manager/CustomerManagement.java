@@ -22,10 +22,9 @@ public class CustomerManagement {
         return instanceCustomerManagement;
     }
 
-    public ArrayList<Customer> getProductList(){
+    public ArrayList<Customer> getCustomerList(){
         return customerList;
     }
-
 
     public void addCustomer(Customer customer){
         if(customerList == null){
@@ -73,7 +72,6 @@ public class CustomerManagement {
     }
 
     public void inputCustomerInfo(Customer customer){
-        isIdCustomerExist(customer);
         System.out.println("Nhập tên khách hàng");
         customer.setName(input.nextLine());
         System.out.println("Nhập địa chỉ");

@@ -20,6 +20,7 @@ public class MenuCustomer {
             switch (customerManagerChoice){
                 case 1:
                     Customer customer = new Customer();
+                    CustomerManagement.getInstance().isIdCustomerExist(customer);
                     CustomerManagement.getInstance().inputCustomerInfo(customer);
                     CustomerManagement.getInstance().addCustomer(customer);
                     break;
